@@ -13,9 +13,9 @@
     <div class="flex flex-col min-h-screen">
 
 
-        <header class="bg-white shadow-md p-5 flex justify-between items-center border-b-2 border-black relative">
-            
-               <div class="bg-gray-200 rounded-tl-[14px] rounded-br-[14px] w-[247px] h-[74px] absolute left-0 top-0 relative shadow-[5px_5px_5px_0px_rgba(0,0,0,1)]">
+        <header class="bg-white shadow-md p-5 flex justify-between items-center border-b-2 border-black ">
+
+            <div class="bg-gray-200 rounded-tl-[14px] rounded-br-[14px] w-[247px] h-[74px] absolute left-0 top-0 relative shadow-[5px_5px_5px_0px_rgba(0,0,0,1)]">
                 <img src="{{ asset('images/logo.png') }}" alt="Logo" class="w-full h-full object-cover">
             </div>
 
@@ -55,12 +55,14 @@
                         </a>
                     </li>
                 </ul>
+
             </nav>
 
             <div class="flex-1 p-6 overflow-auto">
-                <div class="bg-gray-200 text-sm text-red-500 rounded-[15px] mb-4 px-6 py-[5px] w-full">
-                    Home > Admin > Data
+                <div class="bg-gray-200 text-sm text-red-500 rounded-[15px] mb-4 px-6 py-[15px] w-full">
+                    Home > Admin > Add
                 </div>
+                <div class="w-full h-[2px] bg-gray-400"></div>
 
                 @if (session('success'))
                 <div id="success-alert" class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4">
@@ -81,8 +83,9 @@
                 </div>
                 @endif
 
-                <div class="flex items-center justify-between mb-4">
-                    <h2 class="text-xl font-semibold text-gray-700">USER
+                <div class="flex items-center justify-between mb-4 mt-[20px]">
+                    <h2 class="text-xl font-semibold text-gray-700">
+                        USER
                         <a href="form" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 ml-1.5">+Add New</a>
                     </h2>
                 </div>
