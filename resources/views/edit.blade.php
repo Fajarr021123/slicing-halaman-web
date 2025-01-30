@@ -32,7 +32,7 @@
 
         <header class="bg-white shadow-md p-5 flex justify-between">
             <div class="flex flex-1 overflow-hidden">
-                <!-- Sidebar -->
+                
                 <nav class="bg-white w-64 p-5 shadow-md border-r border-black-800 h-[350px] hidden lg:block p-5 border border-black rounded-lg ml-5 mt-5">
                     <ul class="space-y-2">
                         <li>
@@ -58,7 +58,7 @@
                     </ul>
                 </nav>
 
-                <!-- Main Content Area -->
+               
                 <div class="flex-1 p-5 lg:p-10 mt-5 lg:mt-0">
                     <div class="bg-gray-200 text-sm text-red-500 rounded-[15px] mb-4 px-6 py-[15px] w-full">
                         Home > Admin > Edit
