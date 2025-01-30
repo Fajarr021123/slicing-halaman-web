@@ -12,7 +12,7 @@
 
     <div class="flex flex-col min-h-screen">
 
-        <!-- Header -->
+    
         <header class="bg-white shadow-md p-5 flex justify-between items-center border-b-2 border-black relative">
             <div class="bg-black rounded-br-[15px] w-[247px] h-[74px] absolute left-1 top-1">
                 <div class="bg-gray-200 rounded-tl-[14px] rounded-br-[14px] w-[247px] h-[74px] absolute left-0 top-0">
@@ -31,7 +31,7 @@
             </div>
         </header>
 
-        <!-- Main Content -->
+   
         <div class="flex flex-2 overflow-hidden">
             <nav class="bg-white w-64 p-5 shadow-md border-r border-black-800 h-[350px] hidden lg:block p-5 border border-black rounded-lg ml-5 mt-5 ">
                 <ul class="space-y-2">
