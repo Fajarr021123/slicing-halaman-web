@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Admin Data</title>
 </head>
 
 <body>
 
     <div class="flex flex-col min-h-screen">
-
 
         <header class="bg-white shadow-md p-5 flex justify-between items-center border-b-2 border-black ">
 
@@ -145,9 +145,10 @@
                                     <a href="edit/${admin.id}" class="text-blue-500 hover:text-blue-700">
                                         <img src="/images/Edit.png" alt="Edit" class="w-8 h-8">
                                     </a>
-                                    <button onclick="deleteAdmin(${admin.id})" class="text-red-500 hover:text-red-700">
+                                    <button onclick="confirmDelete(${admin.id})" class="text-red-500 hover:text-red-700">
                                         <img src="/images/Delete.png" alt="Delete" class="w-8 h-8">
                                     </button>
+                                    
                                 </div>
                             </td>
                         `;
@@ -160,23 +161,28 @@
                 .catch(error => console.error('Error fetching data:', error));
         }
 
-        function deleteAdmin(id) {
-            if (confirm('Yakin ingin menghapus admin ini?')) {
-                fetch(`http://127.0.0.1:8000/api/admin/${id}`, {
-                        method: 'DELETE',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        alert(data.message);
-                        loadAdminData();
-                    })
-                    .catch(error => console.error('Error deleting admin:', error));
-            }
+        function confirmDelete(id) {
+            Swal.fire({
+                title: "Are you sure?",
+
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonText: "Yes, delete it!",
+                cancelButtonText: "No, cancel!"
+            }).then((result) => {
+                if (result.isConfirmed) deleteAdmin(id);
+            });
         }
 
+        function deleteAdmin(id) {
+            fetch(`http://127.0.0.1:8000/api/admin/${id}`, {
+                    method: 'DELETE'
+                })
+                .then(() => {
+                    Swal.fire("Deleted!", "Admin has been deleted.", "success");
+                    loadAdminData();
+                });
+        }
         window.onload = loadAdminData;
 
         function toggleTheme() {
