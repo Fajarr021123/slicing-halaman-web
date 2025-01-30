@@ -13,7 +13,7 @@
 
         <header class="bg-white shadow-md p-5 flex justify-between items-center border-b-2 border-black">
 
-           <div class="bg-gray-200 rounded-tl-[14px] rounded-br-[14px] w-[247px] h-[74px] absolute left-0 top-0 relative shadow-[5px_5px_5px_0px_rgba(0,0,0,1)]">
+            <div class="bg-gray-200 rounded-tl-[14px] rounded-br-[14px] w-[247px] h-[74px] absolute left-0 top-0 relative shadow-[5px_5px_5px_0px_rgba(0,0,0,1)]">
                 <img src="{{ asset('images/logo.png') }}" alt="Logo" class="w-full h-full object-cover">
             </div>
 
@@ -61,7 +61,7 @@
                     <div class="bg-gray-200 text-sm text-red-500 rounded-[15px] mb-4 px-6 py-[15px] w-full">
                         Home > Admin > Edit
                     </div>
-
+                    <div class="w-full h-[2px] bg-gray-400 "></div>
                     @if (session('success'))
                     <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" role="alert">
                         <strong class="font-bold">Success!</strong>
@@ -69,10 +69,10 @@
                     </div>
                     @endif
 
-                    <form action="{{ route('admin.update', $admin->id) }}" method="POST" class="space-y-4">
+                    <form action="{{ route('admin.update', $admin->id) }}" method="POST" class="w-[380px]">
                         @csrf
                         @method('PUT')
-
+                        <h1 class="text-2xl font-bold mb-4">Edit Admin</h1>
                         <label class="block mb-2">Username :</label>
                         <input type="text" name="username" value="{{ $admin->username }}" class="w-full p-2 border rounded mb-4" required>
 
@@ -94,7 +94,7 @@
                             <span class="text-red-500">Inactive</span>
                         </div>
 
-                        <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded w-full">Edit User</button>
+                        <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded w-[160px]">Edit User</button>
                     </form>
                 </div>
             </div>
