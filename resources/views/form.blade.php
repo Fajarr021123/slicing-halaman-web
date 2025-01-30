@@ -12,10 +12,8 @@
     <div class="flex flex-col h-screen">
 
         <header class="bg-white shadow-md p-5 flex justify-between items-center border-b-2 border-black">
-            <div class="bg-black rounded-br-[15px] w-[247px] h-[74px] absolute left-1 top-1">
-                <div class="bg-gray-200 rounded-tl-[14px] rounded-br-[14px] w-[247px] h-[74px] absolute left-0 top-0">
-                    <img src="{{ asset('images/logo.png') }}" alt="Logo" class="w-full h-full object-cover">
-                </div>
+           <div class="bg-gray-200 rounded-tl-[14px] rounded-br-[14px] w-[247px] h-[74px] absolute left-0 top-0 relative shadow-[5px_5px_5px_0px_rgba(0,0,0,1)]">
+                <img src="{{ asset('images/logo.png') }}" alt="Logo" class="w-full h-full object-cover">
             </div>
 
             <div class="flex items-center space-x-4 ml-auto">
